@@ -1,38 +1,97 @@
+li {
+  list-style-type: none;
+  padding: 2rem;
+}
+ul {
+  padding: 0px;
+}
+
+button {
+  color: white;
+  font-weight: bold;
+  width: 150px;
+  padding: 7px;
+  background-color: rgb(68, 68, 68);
+  margin: 20px;
+}
+
 .App {
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.App-body {
+  background-color: #1c1515;
+  display: flex;
+  flex-direction: row;
 }
 
 .App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  color: rgb(219, 219, 219);
+  font-size: 2rem;
+  font-weight: bold;
+  height: 3rem;
+  letter-spacing: 20px;
+  background-color: black;
+  text-align: center;
+  padding-top: 1rem;
 }
 
 .App-link {
-  color: #61dafb;
+  color: #640505;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+a:link,
+a:visited {
+  padding: 20px;
+  color: rgb(26, 15, 15);
+  font-weight: bold;
+  text-decoration: none;
+}
+a:hover,
+a:active {
+  background-color: black;
+  color: white;
+}
+
+.NavBar {
+  display: flex;
+  text-transform: uppercase;
+  flex-direction: column;
+  background-color: #493737;
+  max-height: 100%;
+  width: 17%;
+  color: black;
+}
+.navBarTitle {
+  text-transform: uppercase;
+  color: black;
+  font-size: 1.2rem;
+  margin-bottom: 0;
+}
+
+.ReviewTile {
+  display: flex;
+  justify-content: space-around;
+  flex-direction: row;
+  background-color: #251d1d;
+  height: 250px;
+  padding: 50px;
+  width: 500px;
+  color: #b79696;
+  margin: 20px;
+}
+
+.reviewTileImg {
+  display: flex;
+  justify-content: left;
+  height: 200px;
+  width: 200px;
+  object-fit: cover;
+}
+
+.reviewTileInfo {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  padding-left: 50px;
 }
