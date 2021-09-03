@@ -111,4 +111,20 @@ a:active {
 
 .reviewPage {
   color: white;
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+}
+
+.reviewTitle {
+  background-color: rgb(88, 61, 63);
+}
+
+.reviewVotesAndAuthor,
+.reviewBody {
+  background-color: darkcyan;
+}
+
+.comment {
+  background-color: black;
 }
