@@ -1,6 +1,7 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
-function ReviewTile({ title, owner, category, img_url }) {
+function ReviewTile({ title, owner, category, img_url, review_id }) {
   return (
     <section className="ReviewTile">
       <p>
@@ -12,7 +13,7 @@ function ReviewTile({ title, owner, category, img_url }) {
           <section>Category: {category}</section>
         </h3>
         <section>Written by {owner}</section>
-        <button>Read Review</button>
+        <Link to={`reviews/${review_id}`}>Read Review</Link>
       </section>
     </section>
   );

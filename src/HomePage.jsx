@@ -19,6 +19,7 @@ function HomePage() {
         title={review.title}
         owner={review.owner}
         category={review.category}
+        review_id={review.review_id}
       />
     );
   });

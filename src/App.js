@@ -1,8 +1,16 @@
 import React from "react";
 import "./App.css";
 import HomePage from "./HomePage";
+import StrategyGames from "./StrategyGames";
+import RollAndWriteGames from "./RollAndWriteGames";
+import EngineBuildingGames from "./EngineBuildingGames";
+import HiddenRolesGames from "./HiddenRolesGames";
+import PushYourLuckGames from "./PushYourLuckGames";
+import DexterityGames from "./DexterityGames";
+import DeckBuildingGames from "./DeckBuilding";
+import ReviewPage from "./ReviewPage";
 import NavBar from "./NavBar";
-import { Switch } from "react-router-dom";
+import { Link, Switch } from "react-router-dom";
 import { Route } from "react-router-dom";
 
 function App() {
@@ -11,15 +19,31 @@ function App() {
       <header className="App-header">NC GAMES</header>
       <section className="App-body">
         <NavBar />
-
         <Switch>
-          <Route path="/push-your-luck">Push Your Luck</Route>
-          <Route path="/roll-and-write">Roll and Write</Route>
-          <Route path="/engine-building">Engine Building</Route>
-          <Route path="/deck-building">Deck Building</Route>
-          <Route path="/hidden-roles">Hidden Roles</Route>
-          <Route path="/dexterity">Dexterity</Route>
-          <Route path="/strategy">Strategy</Route>
+          <Route path="/push-your-luck">
+            <PushYourLuckGames />
+          </Route>
+          <Route path="/roll-and-write">
+            <RollAndWriteGames />
+          </Route>
+          <Route path="/engine-building">
+            <EngineBuildingGames />
+          </Route>
+          <Route path="/deck-building">
+            <DeckBuildingGames />
+          </Route>
+          <Route path="/hidden-roles">
+            <HiddenRolesGames />
+          </Route>
+          <Route path="/dexterity">
+            <DexterityGames />
+          </Route>
+          <Route path="/strategy">
+            <StrategyGames />
+          </Route>
+          <Route path="/reviews/:review_id">
+            <ReviewPage />
+          </Route>
           <Route path="/">
             <HomePage />
           </Route>

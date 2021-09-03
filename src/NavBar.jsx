@@ -12,7 +12,6 @@ function NavBar() {
         <li>
           <Link to="/strategy">Strategy Games</Link>
         </li>
-
         <li>
           <Link to="/roll-and-write">Roll and Write</Link>
         </li>
