@@ -1,3 +1,11 @@
+html,
+body {
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  background-repeat: no-repeat;
+}
+
 li {
   list-style-type: none;
   padding: 2rem;
@@ -7,33 +15,48 @@ ul {
 }
 
 button {
-  color: white;
-  font-weight: bold;
-  width: 150px;
+  text-align: center;
+  box-shadow: -2px 2px 8px #000000;
+  margin-top: 20px;
   padding: 7px;
-  background-color: rgb(68, 68, 68);
-  margin: 20px;
+  color: rgb(26, 15, 15);
+  font-weight: bold;
+  text-decoration: none;
+  background-color: #493737;
+  border-radius: 10px;
+  width: 100px;
+}
+
+h2 {
+  margin: 0;
 }
 
 .App {
   text-align: center;
+  height: 100%;
 }
 
 .App-body {
+  height: 100%;
+  min-height: 100vh;
   background-color: #1c1515;
+  background-repeat: space;
   display: flex;
   flex-direction: row;
+  font-family: "Patrick Hand", cursive;
+  letter-spacing: 0.1rem;
 }
 
 .App-header {
   color: rgb(219, 219, 219);
   font-size: 2rem;
   font-weight: bold;
-  height: 3rem;
+  height: 4rem;
   letter-spacing: 20px;
   background-color: black;
-  text-align: center;
-  padding-top: 1rem;
+  padding-top: 2rem;
+  text-align: left;
+  padding-left: 2rem;
 }
 
 .App-link {
@@ -42,19 +65,44 @@ button {
 
 a:link,
 a:visited {
-  padding: 20px;
+  padding: 7px;
   color: rgb(26, 15, 15);
   font-weight: bold;
   text-decoration: none;
+  background-color: #493737;
+  border-radius: 10px;
+  width: 100px;
 }
 a:hover,
-a:active {
+a:active,
+button:hover {
   background-color: black;
   color: white;
+  width: 120px;
+  transition: 0.3s;
+}
+
+button:active {
+  box-shadow: inset -2px 2px 8px #5a4c4c;
+}
+
+.HomePage,
+.StrategyGames,
+.RollAndWriteGames,
+.EngineBuildingGames,
+.PushYourLuckGames,
+.HiddenRolesGames,
+.DeckBuildingGames,
+.DexterityGames {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  height: 100%;
 }
 
 .NavBar {
-  display: flex;
+  display: inline-block;
+  position: static;
   text-transform: uppercase;
   flex-direction: column;
   background-color: #493737;
@@ -62,69 +110,183 @@ a:active {
   width: 17%;
   color: black;
 }
+
+.NavBar ul li {
+}
 .navBarTitle {
   text-transform: uppercase;
   color: black;
-  font-size: 1.2rem;
-  margin-bottom: 0;
+  font-size: 1.5rem;
+  margin-bottom: 30px;
 }
 
-.ReviewTile {
-  display: flex;
-  justify-content: space-around;
-  flex-direction: row;
-  background-color: #251d1d;
-  height: 250px;
-  padding: 50px;
-  width: 500px;
-  color: #b79696;
-  margin: 20px;
-}
+/* Review Tile */
 
-.HomePage,
-.StrategyGamesPage {
-  width: 100%;
-  display: flex;
-
-  flex-wrap: wrap;
-}
 .reviewTileImg {
   display: flex;
   justify-content: left;
-  height: 200px;
-  width: 200px;
+  height: 175px;
+  width: 175px;
   object-fit: cover;
+  border-style: solid;
+  border-color: rgb(90, 90, 90);
+  border-width: 10px;
+}
+
+.ReviewTile {
+  background-color: #251d1d;
+  height: 250px;
+  padding: 20px;
+  width: 440px;
+  color: #b79696;
+  margin: 20px;
+  display: flex;
+  justify-content: space-around;
+  box-shadow: -5px 5px 8px #000000;
+  transition: background-color 2s;
+}
+
+.ReviewTile:hover {
+  background-color: #3f3434;
+}
+
+.readReview {
+  text-align: center;
+  box-shadow: -2px 2px 8px #000000;
+  margin-top: 20px;
+}
+
+.readReview:active {
+  box-shadow: inset -2px 2px 8px #5a4c4c;
 }
 
 .reviewTileInfo {
+  font-size: 0.8rem;
+  padding: 10px;
+  padding-left: 15px;
+  padding-right: 0px;
+  height: 195px;
   display: flex;
   flex-direction: column;
   justify-content: space-around;
-  padding-left: 50px;
+  align-items: center;
+}
+
+.reviewVotesAndAuthor,
+.reviewBody {
+  background-color: #251d1d;
+  padding: 40px;
+}
+
+.reviewVotesAndAuthor {
+  text-align: center;
+}
+/* Comments */
+.comment {
+  background-color: rgb(90, 65, 65);
+  border-radius: 10px;
+  margin: 1% 20% 5% 20%;
+  padding: 20px;
+  font-size: 1.2rem;
+  box-shadow: -5px 5px 8px #00000073;
+  text-align: center;
+}
+
+.gridSection {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  color: #b39d9d;
+  font-size: 1rem;
+}
+
+.titleForComments {
+  font-size: 2rem;
+  margin-top: 10px;
+  padding: 10px;
+  text-align: center;
+}
+/* review page */
+
+.author {
+  margin-top: 60px;
+}
+
+.articleAuthor {
+  text-align: center;
+  margin-right: 10px;
+}
+
+.votesSection {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  display: flex;
+  justify-content: center;
+}
+
+.voteButton,
+.voteCount {
+  margin: 10px;
+  margin-top: 20px;
+}
+.voteCount {
+  margin-top: 25px;
+}
+
+.voteButton {
+  border: none;
+}
+
+.reviewTitleOnTitlePage {
+  font-family: "Patrick Hand", cursive;
+  font-size: 2rem;
+  text-transform: uppercase;
+  letter-spacing: 0.5rem;
+  margin-left: 10%;
+}
+
+.grid-item {
+  display: flex;
+  justify-self: space-around;
+  flex-direction: column;
+}
+
+.reviewTitle {
+  background-color: #251d1d;
+  padding: 15px;
+  border-radius: 10px;
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+}
+
+.reviewInfo {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
 }
 
 .reviewImg {
   width: 200px;
   height: 200px;
   object-fit: cover;
+  border-style: solid;
+  border-color: rgb(90, 90, 90);
+  border-width: 10px;
+  box-shadow: 5px;
+}
+
+.reviewBody p {
+  font-size: 1.3rem;
+  line-height: 2.5rem;
+  margin-top: 0px;
 }
 
 .reviewPage {
   color: white;
-  width: 50%;
+  width: calc(83% - 20%);
+  margin: 10px auto;
+  box-shadow: -5px 5px 8px #000000;
+  text-align: left;
+}
+
+.ReviewData {
   display: flex;
-  flex-direction: column;
-}
-
-.reviewTitle {
-  background-color: rgb(88, 61, 63);
-}
-
-.reviewVotesAndAuthor,
-.reviewBody {
-  background-color: darkcyan;
-}
-
-.comment {
-  background-color: black;
 }

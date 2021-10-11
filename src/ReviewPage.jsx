@@ -1,7 +1,8 @@
 import React, { useEffect, useState } from "react";
-import { getComments, getReview } from "./Api";
+import { getComments, getReview, updateVoteCount } from "./Api";
 import { useParams } from "react-router-dom";
 import Comment from "./Comment";
+import { formatDate } from "./util";
 
 function ReviewPage() {
   const { review_id } = useParams();
@@ -11,6 +12,7 @@ function ReviewPage() {
   useEffect(() => {
     getReview(review_id).then((review) => {
       setSingleReview(review);
+      setVoteCount(review.votes);
     });
   }, []);
 
@@ -21,7 +23,9 @@ function ReviewPage() {
     getComments(review_id).then((comments) => {
       setCommentsData(comments);
     });
-  });
+  }, []);
+
+  const [voteCount, setVoteCount] = useState(0);
 
   const commentsArray = commentsData.map((comment) => {
     return (
@@ -33,28 +37,57 @@ function ReviewPage() {
       />
     );
   });
+
   return (
     <section className="reviewPage">
       <section className="reviewData">
         <section className="reviewTitle">
           <h3>
-            <p>{singleReview.title}</p>
+            <p class="grid-item" class="reviewTitleOnTitlePage">
+              {singleReview.title}
+            </p>
           </h3>
-          <p>{singleReview.owner}</p>
-          <p>{singleReview.created_at}</p>
+          <div class="grid-item" class="articleAuthor">
+            <p class="author">Written by {singleReview.owner}</p>
+            <p>{formatDate(singleReview.created_at)}</p>
+          </div>
         </section>
-        <section className="reviewVotesAndAuthor">
-          <img src={singleReview.review_img_url} className="reviewImg"></img>
-          <p>Votes: {singleReview.votes}</p>
-          <button>Vote</button>
-          <p>Designer: {singleReview.designer}</p>
-          <p>Genre: {singleReview.category}</p>
-        </section>
-        <section className="reviewBody">
-          <p>{singleReview.review_body}</p>
+        <section class="reviewInfo">
+          <section className="reviewVotesAndAuthor">
+            <img
+              src={singleReview.review_img_url}
+              alt="reviewIMG"
+              className="reviewImg"
+            ></img>
+            <div class="votesSection">
+              <button
+                onClick={() => {
+                  updateVoteCount(singleReview.review_id).then(() => {
+                    setVoteCount(voteCount + 1);
+                  });
+                }}
+                class="grid-item"
+                class="voteButton"
+              >
+                Vote
+              </button>
+              <p class="grid-item" class="voteCount">
+                Votes: {voteCount}
+              </p>
+            </div>
+
+            <p>Designer: {singleReview.designer}</p>
+            <p>Genre: {singleReview.category}</p>
+          </section>
+          <section className="reviewBody">
+            <p>{singleReview.review_body}</p>
+          </section>
         </section>
       </section>
-      <section className="CommentSection">{commentsArray}</section>;
+      <section className="CommentSection">
+        <div class="titleForComments">Comments</div>
+        {commentsArray}
+      </section>
     </section>
   );
 }

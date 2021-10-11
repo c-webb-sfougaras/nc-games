@@ -7,12 +7,12 @@ function StrategyGames() {
 
   useEffect(() => {
     getReviews().then((reviews) => {
+      console.log(reviews);
       setReviewData(reviews);
     });
   }, []);
 
   const reviewTileArray = reviewData.map((review) => {
-    console.log(review);
     if (review.category === "strategy") {
       return (
         <ReviewTile

@@ -1,15 +1,18 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { formatDate } from "./util";
 
 function Comment({ author, body, review_id, votes, created_at }) {
   return (
     <section>
       <section className="comment">
-        <p>{author}</p>
-        <p>{body}</p>
-        <p>{review_id}</p>
-        <p>Votes: {votes}</p>
-        <p>{created_at}</p>
+        <p class="commentBody">{body}</p>
+        <section class="gridSection">
+          <p class="grid-item" class="commentAuthor">
+            User: {author}
+          </p>
+          <p class="grid-item"> {formatDate(created_at)}</p>
+          <p class="grid-item">Votes: {votes}</p>
+        </section>
       </section>
     </section>
   );

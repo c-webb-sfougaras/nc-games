@@ -7,6 +7,7 @@ function HomePage() {
 
   useEffect(() => {
     getReviews().then((reviews) => {
+      console.log(reviews);
       setReviewData(reviews);
     });
   }, []);

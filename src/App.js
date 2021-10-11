@@ -10,7 +10,7 @@ import DexterityGames from "./DexterityGames";
 import DeckBuildingGames from "./DeckBuilding";
 import ReviewPage from "./ReviewPage";
 import NavBar from "./NavBar";
-import { Link, Switch } from "react-router-dom";
+import { Switch } from "react-router-dom";
 import { Route } from "react-router-dom";
 
 function App() {

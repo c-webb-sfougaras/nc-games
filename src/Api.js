@@ -1,7 +1,7 @@
 import axios from "axios";
 
 const gamesApi = axios.create({
-  baseURL: "https://christina-nc-games.herokuapp.com/api",
+  baseURL: "https://c-sfougaras-nc-games-project.herokuapp.com/api",
 });
 
 export const getReviews = () => {
@@ -20,4 +20,12 @@ export const getComments = (review_id) => {
   return gamesApi.get(`/reviews/${review_id}/comments`).then((res) => {
     return res.data.comments;
   });
+};
+
+export const updateVoteCount = (review_id) => {
+  return gamesApi
+    .patch(`/reviews/${review_id}`, { inc_votes: 1 })
+    .then((res) => {
+      return res.data;
+    });
 };
