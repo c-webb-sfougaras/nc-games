@@ -12,8 +12,11 @@ function StrategyGames() {
     });
   }, []);
 
-  const reviewTileArray = reviewData.map((review) => {
-    if (review.category === "strategy") {
+  const reviewTileArray = reviewData
+    .filter((review) => {
+      return review.category === "strategy";
+    })
+    .map((review) => {
       return (
         <ReviewTile
           key={review.review_id}
@@ -24,8 +27,7 @@ function StrategyGames() {
           review_id={review.review_id}
         />
       );
-    }
-  });
+    });
 
   return <section className="StrategyGames">{reviewTileArray}</section>;
 }

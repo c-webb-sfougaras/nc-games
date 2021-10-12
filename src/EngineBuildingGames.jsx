@@ -11,9 +11,11 @@ function EngineBuildingGames() {
     });
   }, []);
 
-  const reviewTileArray = reviewData.map((review) => {
-    console.log(review);
-    if (review.category === "engine-building") {
+  const reviewTileArray = reviewData
+    .filter((review) => {
+      return review.category === "engine-building";
+    })
+    .map((review) => {
       return (
         <ReviewTile
           key={review.review_id}
@@ -24,9 +26,7 @@ function EngineBuildingGames() {
           review_id={review.review_id}
         />
       );
-    }
-  });
-
+    });
   return <section className="EngineBuildingGames">{reviewTileArray}</section>;
 }
 

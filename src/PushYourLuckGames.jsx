@@ -11,9 +11,11 @@ function PushYourLuckGames() {
     });
   }, []);
 
-  const reviewTileArray = reviewData.map((review) => {
-    console.log(review);
-    if (review.category === "push-your-luck") {
+  const reviewTileArray = reviewData
+    .filter((review) => {
+      return review.category === "push-your-luck";
+    })
+    .map((review) => {
       return (
         <ReviewTile
           key={review.review_id}
@@ -24,8 +26,7 @@ function PushYourLuckGames() {
           review_id={review.review_id}
         />
       );
-    }
-  });
+    });
   return <section className="PushYourLuckGames">{reviewTileArray}</section>;
 }
 

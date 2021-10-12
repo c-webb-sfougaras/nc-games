@@ -11,9 +11,11 @@ function RollAndWriteGames() {
     });
   }, []);
 
-  const reviewTileArray = reviewData.map((review) => {
-    console.log(review);
-    if (review.category === "roll-and-write") {
+  const reviewTileArray = reviewData
+    .filter((review) => {
+      return review.category === "roll-and-write";
+    })
+    .map((review) => {
       return (
         <ReviewTile
           key={review.review_id}
@@ -24,8 +26,7 @@ function RollAndWriteGames() {
           review_id={review.review_id}
         />
       );
-    }
-  });
+    });
 
   return <section className="RollAndWriteGames">{reviewTileArray}</section>;
 }

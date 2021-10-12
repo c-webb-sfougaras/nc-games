@@ -43,11 +43,9 @@ function ReviewPage() {
       <section className="reviewData">
         <section className="reviewTitle">
           <h3>
-            <p class="grid-item" class="reviewTitleOnTitlePage">
-              {singleReview.title}
-            </p>
+            <p class="grid-item reviewTitleOnTitlePage">{singleReview.title}</p>
           </h3>
-          <div class="grid-item" class="articleAuthor">
+          <div class="grid-item articleAuthor">
             <p class="author">Written by {singleReview.owner}</p>
             <p>{formatDate(singleReview.created_at)}</p>
           </div>
@@ -66,14 +64,11 @@ function ReviewPage() {
                     setVoteCount(voteCount + 1);
                   });
                 }}
-                class="grid-item"
-                class="voteButton"
+                class="grid-item voteButton"
               >
                 Vote
               </button>
-              <p class="grid-item" class="voteCount">
-                Votes: {voteCount}
-              </p>
+              <p class="grid-item, voteCount">Votes: {voteCount}</p>
             </div>
 
             <p>Designer: {singleReview.designer}</p>

@@ -11,9 +11,11 @@ function DexterityGames() {
     });
   }, []);
 
-  const reviewTileArray = reviewData.map((review) => {
-    console.log(review);
-    if (review.category === "dexterity") {
+  const reviewTileArray = reviewData
+    .filter((review) => {
+      return review.category === "dexterity";
+    })
+    .map((review) => {
       return (
         <ReviewTile
           key={review.review_id}
@@ -24,8 +26,7 @@ function DexterityGames() {
           review_id={review.review_id}
         />
       );
-    }
-  });
+    });
   return <section className="DexterityGames">{reviewTileArray}</section>;
 }
 

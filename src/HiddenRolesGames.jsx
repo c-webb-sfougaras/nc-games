@@ -11,9 +11,11 @@ function HiddenRolesGames() {
     });
   }, []);
 
-  const reviewTileArray = reviewData.map((review) => {
-    console.log(review);
-    if (review.category === "hidden-roles") {
+  const reviewTileArray = reviewData
+    .filter((review) => {
+      return review.category === "hidden-roles";
+    })
+    .map((review) => {
       return (
         <ReviewTile
           key={review.review_id}
@@ -24,8 +26,7 @@ function HiddenRolesGames() {
           review_id={review.review_id}
         />
       );
-    }
-  });
+    });
   return <section className="HiddenRolesGames">{reviewTileArray}</section>;
 }
 

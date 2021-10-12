@@ -11,9 +11,11 @@ function DeckBuildingGames() {
     });
   }, []);
 
-  const reviewTileArray = reviewData.map((review) => {
-    console.log(review);
-    if (review.category === "deck-building") {
+  const reviewTileArray = reviewData
+    .filter((review) => {
+      return review.category === "deck-building";
+    })
+    .map((review) => {
       return (
         <ReviewTile
           key={review.review_id}
@@ -24,8 +26,7 @@ function DeckBuildingGames() {
           review_id={review.review_id}
         />
       );
-    }
-  });
+    });
   return <section className="DeckBuildingGames">{reviewTileArray}</section>;
 }
 

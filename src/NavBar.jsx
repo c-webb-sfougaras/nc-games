@@ -4,7 +4,6 @@ import { Link } from "react-router-dom";
 function NavBar() {
   return (
     <section className="NavBar">
-      <h1 className="navBarTitle"></h1>
       <ul>
         <li>
           <Link to="/">Home</Link>
