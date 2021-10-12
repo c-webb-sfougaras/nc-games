@@ -1,4 +1,5 @@
 {
+  "homepage": "https://c-webb-sfougaras.github.io/nc-games/",
   "name": "nc-games",
   "version": "0.1.0",
   "private": true,
@@ -28,7 +29,6 @@
   "browserslist": {
     "production": [
       ">0.2%",
-      "not dead",
       "not op_mini all"
     ],
     "development": [
